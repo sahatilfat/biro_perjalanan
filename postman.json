@@ -1,0 +1,369 @@
+{
+  "info": {
+    "_postman_id": "f0297ad6-a14a-428f-9847-659410212637",
+    "name": "biroperjalanan",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "User",
+      "item": [
+        {
+          "name": "Login",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "postman.setEnvironmentVariable(\"token\", jsonData.data.Token);"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "email",
+                  "value": "badu@gmail.com",
+                  "type": "text"
+                },
+                {
+                  "key": "password",
+                  "value": "hahahihi",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url}}/api/authaccount/login",
+              "host": ["{{url}}"],
+              "path": ["api", "authaccount", "login"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Find User",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [""],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "email",
+                  "value": "badu@gmail.com",
+                  "type": "text"
+                },
+                {
+                  "key": "password",
+                  "value": "hahahihi",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url}}/api/users/002d6e85-5091-4423-aaa3-45bc188a0c7a",
+              "host": ["{{url}}"],
+              "path": ["api", "users", "002d6e85-5091-4423-aaa3-45bc188a0c7a"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Register",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "email",
+                  "value": "brodi@gmail.com",
+                  "type": "text"
+                },
+                {
+                  "key": "password",
+                  "value": "hahahihi",
+                  "type": "text"
+                },
+                {
+                  "key": "name",
+                  "value": "Bro",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url}}/api/authaccount/registration",
+              "host": ["{{url}}"],
+              "path": ["api", "authaccount", "registration"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Test",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQ4MWQwNDI2LWM5ODgtNDMzNy1hNmMzLTEwMzY1M2E4MTk5ZiIsImVtYWlsIjoiYmFkdUBnbWFpbC5jb20iLCJuYW1lIjoiU2kgQmFkdSIsImlhdCI6MTY0ODYxODk1NCwiZXhwIjoxNjQ4NzA1MzU0fQ.xKEHRE527Np3y0lkVFNzZ4d6IV9h1siBD3bXQjZTQlo",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "email",
+                  "value": "brodi@gmail.com",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "password",
+                  "value": "hahahihi",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "name",
+                  "value": "Bro",
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url}}/api/authaccount/test",
+              "host": ["{{url}}"],
+              "path": ["api", "authaccount", "test"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Tourist",
+      "item": [
+        {
+          "name": "Get Tourist",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/api/Tourist?page=203",
+              "host": ["{{url}}"],
+              "path": ["api", "Tourist"],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "203"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Find Tourist by id",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/api/Tourist/3b68da8c-fd81-4cdf-8ff8-dbfc6ca0bd01",
+              "host": ["{{url}}"],
+              "path": ["api", "Tourist", "3b68da8c-fd81-4cdf-8ff8-dbfc6ca0bd01"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Tourist",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "tourist_email",
+                  "value": "broni@gmail",
+                  "type": "text"
+                },
+                {
+                  "key": "tourist_location",
+                  "value": "jayakarta",
+                  "type": "text"
+                },
+                {
+                  "key": "tourist_name",
+                  "value": "Broni Marawa",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url}}/api/Tourist",
+              "host": ["{{url}}"],
+              "path": ["api", "Tourist"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Tourist",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "tourist_email",
+                  "value": "broni@gmail.com",
+                  "type": "text"
+                },
+                {
+                  "key": "tourist_location",
+                  "value": "jayakarta",
+                  "type": "text"
+                },
+                {
+                  "key": "tourist_name",
+                  "value": "Broni Marawa",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url}}/api/Tourist/3b68da8c-fd81-4cdf-8ff8-dbfc6ca0bd01",
+              "host": ["{{url}}"],
+              "path": ["api", "Tourist", "3b68da8c-fd81-4cdf-8ff8-dbfc6ca0bd01"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Tourist",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "tourist_email",
+                  "value": "broni@gmail.com",
+                  "type": "text"
+                },
+                {
+                  "key": "tourist_location",
+                  "value": "jayakarta",
+                  "type": "text"
+                },
+                {
+                  "key": "tourist_name",
+                  "value": "Broni Marawa",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url}}/api/Tourist/3b68da8c-fd81-4cdf-8ff8-dbfc6ca0bd01",
+              "host": ["{{url}}"],
+              "path": ["api", "Tourist", "3b68da8c-fd81-4cdf-8ff8-dbfc6ca0bd01"]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
